@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="buscador.js" defer></script>
+    <title>B I B L I O T E C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #fff;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 20px;
+        }
+
+        .book-details {
+            max-width: 40%;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out; /* Añade una transición suave al hacer hover */
+        }
+
+        .book-details:hover {
+            transform: scale(1.05); /* Hace un efecto de escala al hacer hover */
+        }
+
+        .book-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .book-author {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .book-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6C3483; /* Color morado para el precio */
+            margin-top: 5px;
+        }
+
+        .book-description {
+            margin-top: 15px;
+            color: #555; /* Color de texto gris oscuro para la descripción */
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            padding: 15px;
+            text-align: center;
+            width: 48%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #512e68;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: rgb(102, 24, 155);
+        }
+
+        .carrito-container {
+            position: relative;
+        }
+
+        #carrito-icon {
+            width: 50px;
+            height: auto;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-link:hover {
+            text-decoration: none;
+            color: #ccc; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="name-logo">
+            <a href="index.html" class="logo-link">
+                <h1>B I B L I O T E C</h1>
+            </a>
+        </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por nombre, autor o ISBN" id="titulo" required>
+        <!-- Llama la función de JS -->
+        <button id="search-button">Buscar</button>
+    </div>
+    <div class="carrito-container">
+        <a href="carrito.html">
+            <img src="img/carrito-de-compras.png" alt="Carrito de compras" id="carrito-icon">
+        </a>
+    </div>
+    </header>
+
+    <h1>Ciencias Basicas</h1>
+    <div class="book-container">
+        <!-- Libro 1 -->
+        <div class="book-details">
+            <img src="img/opac-image.png" alt="Física : electricidad y magnetismo">
+            <div class="book-title">Física : electricidad y magnetismo</div>
+            <div class="book-author">Raymond A. Serway, John W. Jewett</div>
+            <div class="ISBN">ISBN: 9786075267098</div>
+            <div class="book-price">$130.00</div>
+            <div class="book-description">
+                <p>"Al escribir esta décima edición de Física. Electricidad y magnetismo, continuamos con nuestros esfuerzos por mejorar la claridad de la presentación e incluir nuevas características pedagógicas que ayudan a apoyar los procesos de aprendizaje y enseñanza. Al retroalimentar las sugerencias de los usuarios de la novena edición, así como de los revisores, hemos refinado el texto para satisfacer mejor las necesidades de los estudiantes y profesores. Este libro está pensado para un curso introductorio de física para estudiantes que se especializan en ciencia o ingeniería. Todo el contenido del libro podría cubrirse en un curso de tres semestres. Los antecedentes matemáticos ideales de los estudiantes que tomen este curso deben incluir un semestre de cálculo. Si esto no es posible, el estudiante debe inscribirse en un curso simultáneo de introducción al cálculo."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button" onclick="agregarLibroAlCarrito('Física : electricidad y magnetismo', 130.00, 1)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- Libro 2 -->
+        <div class="book-details">
+            <img src="img/opac-image (1).png" alt="Fundamentos de física">
+            <div class="book-title">Fundamentos de física</div>
+            <div class="book-author">David Halliday, Robert Resnick, Jearl Walker</div>
+            <div class="ISBN">ISBN: 9702401216 (obra completa)</div>
+            <div class="book-price">$150.00</div>
+            <div class="book-description">
+                <p>"La física es una de las ciencias más interesantes, porque explica cómo funciona el mundo; pero, la mayoría de los libros clásicos, están escritos sin ninguna o poca relación con el mundo real; les hace falta diversión. Por esa razón, en esta nueva edición, el profesor Jearl Walker incluyen una gran variedad de temas curiosos relacionados con la vida diaria de los jóvenes estudiantes. Uno de los principales objetivos al escribir este texto, es proporcionar a los maestros una herramienta con la que puedan enseñar a sus alumnos de ingeniería y ciencias a leer con efectividad el material científico, identificar conceptos fundamentales, razonar por medio de preguntas y resolver problemas cuantitativos. En esta edición se podrán encontrar nuevos enigmas al inicio de cada capítulo (situación curiosa y enigmática que introduce al tema) ; la narrativa de cada uno de los capítulos ahora se inicia con la interrogante ¿Qué es la física?, con la respuesta que pertenece al tema. Preguntas de repaso, son puntos de detención que de manera efectiva cuestionan al estudiante ; con nuevos problemas modelo, en los cuales se incluye una solución detallada y analizada de cada problema. Cuenta con su propia página web, la cual incluye material de apoyo para los profesores y alumnos."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button" onclick="agregarLibroAlCarrito('Fundamentos de física', 150.00, 1)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- Libro 3 -->
+        <div class="book-details">
+            <img src="img/opac-image 3.png" alt="Fundamentos de física">
+            <div class="book-title">Fundamentos de física</div>
+            <div class="book-author">David Halliday, Robert Resnick, Jearl Walker</div>
+            <div class="ISBN">ISBN: 9789708172097 (v. 2) - 9789702401216 (obra completa)</div>
+            <div class="book-price">$140.00</div>z
+            <div class="book-description">
+                <p> "La física es una de las ciencias más interesantes, porque explica cómo funciona el mundo; pero, la mayoría de los libros clásicos, están escritos sin ninguna o poca relación con el mundo real; les hace falta diversión. Por esa razón, en esta nueva edición, el profesor Jearl Walker incluyen una gran variedad de temas curiosos relacionados con la vida diaria de los jóvenes estudiantes. Uno de los principales objetivos al escribir este texto, es proporcionar a los maestros una herramienta con la que puedan enseñar a sus alumnos de ingeniería y ciencias a leer con efectividad el material científico, identificar conceptos fundamentales, razonar por medio de preguntas y resolver problemas cuantitativos. En esta edición se podrán encontrar nuevos enigmas al inicio de cada capítulo (situación curiosa y enigmática que introduce al tema) ; la narrativa de cada uno de los capítulos ahora se inicia con la interrogante ¿Qué es la física?, con la respuesta que pertenece al tema. Preguntas de repaso, son puntos de detención que de manera efectiva cuestionan al estudiante ; con nuevos problemas modelo, en los cuales se incluye una solución detallada y analizada de cada problema. Cuenta con su propia página web, la cual incluye material de apoyo para los profesores y alumnos."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button" onclick="agregarLibroAlCarrito('Fundamentos de física', 140.00, 1)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <!-- Libro 4 -->
+        <div class="book-details">
+            <img src="img/opac-image 2.png" alt="Química">
+            <div class="book-title">Química</div>
+            <div class="book-author">Raymond Chang, Kenneth A. Goldsby</div>
+            <div class="ISBN">ISBN: 9786071513939</div>
+            <div class="book-price">$180.00</div>
+            <div class="book-description">
+                <p>U"El propósito de los autores de Química es presentar un texto claro y conciso para no abrumar a los lectores con una profusión de información innecesaria y, al mismo tiempo, suficientemente amplio de modo que prepare a los estudiantes para avanzar al siguiente nivel de aprendizaje. La alentadora realimentación que se ha recibido de instructores y estudiantes ha convencido a los autores de que este estilo es eficaz. Al igual que en sus diez ediciones anteriores, los autores han procurado lograr un claro equilibrio entre la teoría y las aplicación. También han dado particular importancia en presentar los principios básicos con ejemplos de la vida diaria. Lo nuevo en esta edición: - Ken Goldsby se asoció con Raymond Chang como coautor en la undécima edición de Química. La experiencia de Ken en química orgánica ha añadido claridad al contenido y a los problemas. - Nueva organización de los capítulos que permite a quienes enseñan química nuclear introducir este material inmediatamente después de terminar con la electroquímica. Además de reconocer la creciente importancia de la medicina nuclear y el actual debate sobre el papel que jugará la energía nuclear en la resolución de las necesidades energéticas futuras, la ubicación del tema de energía nuclear antes de la química atmosférica ayuda a la explicación de la contaminación con radón. - Se agregaron numerosos problemas de fin de capítulo, que ponen a prueba la capacidad del estudiante para interpretar datos gráficos y para explicar conceptos. - Se agregó un nuevo tipo de problemas llamados Interpretación, modelación y estimación. Estos problemas están diseñados para mostrar a los estudiantes a resolver problemas del mundo real."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button" onclick="agregarLibroAlCarrito('Química', 180.00, 1)">Agregar al Carrito</button>
+            </div>
+        </div>
+
+        <script src="js/carrito.js"></script>
+    </body>
+</html>

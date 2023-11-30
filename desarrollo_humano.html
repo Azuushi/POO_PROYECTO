@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="buscador.js" defer></script>
+    <title>B I B L I O T E C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #fff;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 20px;
+        }
+
+        .book-details {
+            max-width: 40%;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out; /* Añade una transición suave al hacer hover */
+        }
+
+        .book-details:hover {
+            transform: scale(1.05); /* Hace un efecto de escala al hacer hover */
+        }
+
+        .book-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .book-author {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .book-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6C3483; /* Color morado para el precio */
+            margin-top: 5px;
+        }
+
+        .book-description {
+            margin-top: 15px;
+            color: #555; /* Color de texto gris oscuro para la descripción */
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            padding: 15px;
+            text-align: center;
+            width: 48%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #512e68;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: rgb(102, 24, 155);
+        }
+
+        .carrito-container {
+            position: relative;
+        }
+
+        #carrito-icon {
+            width: 50px;
+            height: auto;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-link:hover {
+            text-decoration: none;
+            color: #ccc; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="name-logo">
+            <a href="index.html" class="logo-link">
+                <h1>B I B L I O T E C</h1>
+            </a>
+        </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por nombre, autor o ISBN" id="titulo" required>
+        <!-- Llama la función de JS -->
+        <button id="search-button">Buscar</button>
+    </div>
+    <div class="carrito-container">
+        <a href="carrito.html">
+            <img src="img/carrito-de-compras.png" alt="Carrito de compras" id="carrito-icon">
+        </a>
+    </div>
+    </header>
+
+    <h1>Desarrollo Humano</h1>
+    <div class="book-container">
+        <!-- Libro 1 -->
+        <div class="book-details">
+            <img src="img/opac-image 4.png" alt="Aprendizaje basado en competencias: una propuesta para la evaluación de las competencias genéricas">
+            <div class="book-title">Aprendizaje basado en competencias: una propuesta para la evaluación de las competencias genéricas</div>
+            <div class="book-author">Aurelio Villa Sánchez y Manuel Poblete Ruiz</div>
+            <div class="book-price">$230.00</div>
+            <div class="book-description">
+                <p>"Una herramienta para profesores y universidades que estén en la línea de incorporar las competencias transversales en sus currículos académicos y deseen hacer seguimiento y evaluar los comportamientos de los estudiantes en cada una de estas competencias".</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 2 -->
+        <div class="book-details">
+            <img src="img/opac-image 5.png" alt="Inteligencia emocional para el liderazgo: somos el resultado de nuestros pensamientos dominantes, por tanto, el éxito son solo hábitos">
+            <div class="book-title">Inteligencia emocional para el liderazgo: somos el resultado de nuestros pensamientos dominantes, por tanto, el éxito son solo hábitos</div>
+            <div class="book-author">Juan Carlos Zúñiga Montalvo</div>
+            <div class="book-price">$210.00</div>
+            <div class="ISBN">ISBN: 9781506501840</div>
+            <div class="book-description">
+                <p>"El libro no solo es de liderazgo y sus habilidades que podemos desarrollar, es la base de un verdadero liderazgo transformador que se establece en la inteligencia emocional y las actitudes que debemos fortalecer. Partimos de la definición de un perfil emocional para líderes y el desarrollo de la inteligencia emocional a través de ejercicios enfocados a potencializar las habilidades del líder transformacional, provocando cambios radicales en temas como: la gente y su influencia, lograr todo lo que te propongas, habilidades que jamás hayas visto en ti y ahora las sientes como una fortaleza y el incremento de tu autoestima y seguridad para alcanzar lo que te hace feliz. Esto no será un viaje a la reflexión de ti mismo y tus habilidades, será un viaje a tu transformación hacia un futuro mejor en todos los aspectos (Familia, individuo, trabajo, económico y financiera, espiritual), un futuro en el que veamos certidumbre y predictibilidad, fortaleza para ayudar y desarrollar a otros líderes que ayuden a la gente a lograr sus sueños más ambiciosos, sentirás el cambio en tu forma de ser, que modificará tus pensamientos y cambiará tu Zona de Confort para siempre y te mantendrás modificándola a tu entera voluntad; todo lo anterior, basado simplemente en el desarrollo de las emociones que debemos acrecentar y evitar."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 3 -->
+        <div class="book-details">"
+            <img src="img/mind.jpg" alt="Inteligencia emocional plena: mindfulness y la gestión eficaz de las emociones" style="width: 140px; height: 185px;">
+            <div class="book-title">Inteligencia emocional plena: mindfulness y la gestión eficaz de las emociones</div>
+            <div class="book-author">Natalia Ramos Díaz, Héctor Enríquez Anchondo, Olivia Recondo Pérez</div>
+            <div class="ISBN">ISBN: 9788499881393</div>
+            <div class="book-price">$190.00</div>
+            <div class="book-description">
+                <p>"¿Cómo podría integrarse la milenaria práctica de la atención plena (también conocida como mindfulness) con la inteligencia emocional? Este libro analiza, a nivel teórico, y de forma muy didáctica y concisa, la forma de incorporar dicha práctica como herramienta potenciadora de la inteligencia emocional. El eje de esta integración práctica consiste en atender a nuestra experiencia presente con una actitud de apertura, aceptación y ausencia de juicio. Porque cuando focalizamos la atención plena en los contenidos emocionales, se facilita enormemente la comprensión y regulación de las emociones. Este libro te permitirá conocer en profundidad qué es el mindfulness o atención plena, sus efectos terapéuticos, entender cómo ha surgido y se ha ido desarrollando el concepto de inteligencia emocional y saber de qué forma integrar ambos conceptos para desarrollar un tipo de inteligencia que excede lo que hoy entendemos por una inteligencia analítica o emocional. El resultado es una Inteligencia Emocional Plena (INEP) que nos permite integrar nuestro sistema cognitivo y emocional en el 'aquí y ahora'."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 4 -->
+        <div class="book-details">
+            <img src="img/wawawa.png" alt="Psicología">
+            <div class="book-title">Psicología</div>
+            <div class="book-author">Concepción Vaquero Cázares, Esteban Vaquero Cázares</div>
+            <div class="ISBN">ISBN: 9789706476777</div>
+            <div class="book-price">$250.00</div>
+            <div class="book-description">
+                <p>"Actualmente el desarrollo de la tecnología ha sido tan rápido que ha revolucionado el estilo de vida de las personas, y con esto ha ocasionado que el ser humano desarrolle diversos conocimientos y habilidades que conllevan un impacto en su aprendizaje, es decir, él ha modificado su manera de aprender. Esta modificación radica en resaltar la importancia de la comprensión, la comunicación oral y escrita, la autonomía del aprendizaje, la obtención, la selección y análisis crítico de la información y resolución de problemas."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

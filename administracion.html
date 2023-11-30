@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="buscador.js" defer></script>
+    <title>B I B L I O T E C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #fff;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 20px;
+        }
+
+        .book-details {
+            max-width: 40%;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out; /* Añade una transición suave al hacer hover */
+        }
+
+        .book-details:hover {
+            transform: scale(1.05); /* Hace un efecto de escala al hacer hover */
+        }
+
+        .book-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .book-author {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .book-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6C3483; /* Color morado para el precio */
+            margin-top: 5px;
+        }
+
+        .book-description {
+            margin-top: 15px;
+            color: #555; /* Color de texto gris oscuro para la descripción */
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            padding: 15px;
+            text-align: center;
+            width: 48%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #512e68;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: rgb(102, 24, 155);
+        }
+
+        .carrito-container {
+            position: relative;
+        }
+
+        #carrito-icon {
+            width: 50px;
+            height: auto;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-link:hover {
+            text-decoration: none;
+            color: #ccc; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="name-logo">
+            <a href="index.html" class="logo-link">
+                <h1>B I B L I O T E C</h1>
+            </a>
+        </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por nombre, autor o ISBN" id="titulo" required>
+        <!-- Llama la función de JS -->
+        <button id="search-button">Buscar</button>
+    </div>
+    <div class="carrito-container">
+        <a href="carrito.html">
+            <img src="img/carrito-de-compras.png" alt="Carrito de compras" id="carrito-icon">
+        </a>
+    </div>
+    </header>
+
+    <h1>Administración</h1>
+    <div class="book-container">
+        <!-- Libro 1 -->
+        <div class="book-details">
+            <img src="img/popito.png" alt="Administración : una perspectiva global y empresarial">
+            <div class="book-title">Administración : una perspectiva global y empresarial</div>
+            <div class="book-author">Harold Koontz, Heinz Weihrich, Mark Cannice ; traducción, María Jesús Herrero Díaz y Manuel Ortiz Staines</div>
+            <div class="ISBN">ISBN: 9786071507594</div>
+            <div class="book-price">$150.00</div>
+            <div class="book-description">
+                <p>"Una perspectiva global y empresarial continúa el éxito de las ediciones anteriores gracias a su integración de las teorías y prácticas administrativas con un enfoque centrado en las perspectivas globales y empresariales. Además, presenta una mezcla de conceptos sobre la administración, muy útil para quienes trabajan en diferentes organizaciones y países..."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 2 -->
+        <div class="book-details">
+            <img src="img/opac-imageee.png" alt="Administrar para la calidad : conceptos administrativos del control total de calidad">
+            <div class="book-title">Administrar para la calidad : conceptos administrativos del control total de calidad</div>
+            <div class="book-author">Mario Gutiérrez</div>
+            <div class="ISBN">ISBN: 9789681832476</div>
+            <div class="book-price">$170.00</div>
+            <div class="book-description">
+                <p>"Este libro es básico para el estudio de los mecanismos a través de los cuales entran en contacto compradores y vendedores de activos financieros que se comercializan en el mundo, es decir, de los mercados financieros. El texto se desarrolla en seis capítulos que van de lo simple a lo complejo, desde el conocimiento de las instituciones financieras que integran el mapa mundial de las finanzas hasta. las principales técnicas de selección y evaluación de inversiones en los mercados financieros internacionales, pasando por el mercado de divisas, el mercado internacional de bonos, el mercado internacional de capitales y los mercados de derivados. Sin duda, esta será una obra de lectura fácil y amena para los estudiantes y profesionales de la economía y las finanzas.."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 3 -->
+        <div class="book-details">
+            <img src="img/61VBMJg7vhL.jpg" alt="Empresas familiares" style="width: 140px; height: 185px;">
+            <div class="book-title">Empresas familiares</div>
+            <div class="book-author">Ernesto J. Poza</div>
+            <div class="ISBN">ISBN: 9786074814972</div>
+            <div class="book-price">$250.00</div>
+            <div class="book-description">
+                <p>"Las empresas que pertenecen a familias enfrentan, en la actualidad, un desafío más difícil que en cualquier otra. Para garantizar el éxito de su empresa familiar, este libro le ofrece la siguiente generación de conocimientos y habilidades que se necesitan para una administración y liderazgo redituables... "</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

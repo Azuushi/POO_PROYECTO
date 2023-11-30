@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="buscador.js" defer></script>
+    <title>B I B L I O T E C</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 20px;
+            text-align: center;
+        }
+
+        .search-bar {
+            background: linear-gradient(150deg, #6C3483, #9C1D8E);
+            padding: 10px;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            flex: 1;
+            margin-left: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            box-sizing: border-box;
+            border: none;
+            border-radius: 5px 0 0 5px;
+        }
+
+        .search-bar button {
+            padding: 10px;
+            cursor: pointer;
+            border: none;
+            border-radius: 0 5px 5px 0;
+            background-color: #fff;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+            margin: 20px;
+        }
+
+        .book-details {
+            max-width: 40%;
+            margin: 20px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease-in-out; /* Añade una transición suave al hacer hover */
+        }
+
+        .book-details:hover {
+            transform: scale(1.05); /* Hace un efecto de escala al hacer hover */
+        }
+
+        .book-details img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        .book-title {
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .book-author {
+            font-size: 18px;
+            margin-top: 5px;
+        }
+
+        .book-price {
+            font-size: 16px;
+            font-weight: bold;
+            color: #6C3483; /* Color morado para el precio */
+            margin-top: 5px;
+        }
+
+        .book-description {
+            margin-top: 15px;
+            color: #555; /* Color de texto gris oscuro para la descripción */
+        }
+
+        .action-buttons {
+            display: flex;
+            justify-content: space-evenly;
+            margin-top: 20px;
+        }
+
+        .action-button {
+            padding: 15px;
+            text-align: center;
+            width: 48%;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            background-color: #512e68;
+            color: white;
+            font-size: 16px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .action-button:hover {
+            background-color: rgb(102, 24, 155);
+        }
+
+        .carrito-container {
+            position: relative;
+        }
+
+        #carrito-icon {
+            width: 50px;
+            height: auto;
+            margin-right: 5px;
+            cursor: pointer;
+        }
+
+        .logo-link {
+            text-decoration: none;
+            color: #fff;
+        }
+
+        .logo-link:hover {
+            text-decoration: none;
+            color: #ccc; 
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="name-logo">
+            <a href="index.html" class="logo-link">
+                <h1>B I B L I O T E C</h1>
+            </a>
+        </div>
+    <div class="search-bar">
+        <input type="text" placeholder="Buscar por nombre, autor o ISBN" id="titulo" required>
+        <!-- Llama la función de JS -->
+        <button id="search-button">Buscar</button>
+    </div>
+    <div class="carrito-container">
+        <a href="carrito.html">
+            <img src="img/carrito-de-compras.png" alt="Carrito de compras" id="carrito-icon">
+        </a>
+    </div>
+    </header>
+
+    <h1>Comercio y Negocios Internacionales</h1>
+    <div class="book-container">
+        <!-- Libro 1 -->
+        <div class="book-details">
+            <img src="img/aaaaaa.png" alt="Fundamentos de las relaciones internacionales">
+            <div class="book-title">Fundamentos de las relaciones internacionales</div>
+            <div class="book-author">Karen Mingst</div>
+            <div class="ISBN">ISBN: 9786078508471</div>
+            <div class="book-price">$230.00</div>
+            <div class="book-description">
+                <p>"Ha brindado un acercamiento claro y accesible a los temas y conceptos fundamentales de la disciplina internacionalista. Su sencilla estructura y enfoque pedagógico ofrece a los estudiantes las herramientas analíticas necesarias para entender el dinámico campo de las relaciones internacionales. A docentes, les sugiere temas para iniciar debates en clase y vincular las diferentes áreas que comprende las relaciones internacionales, como la economía, la política internacional, la seguridad internacional y la globalización "</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 2 -->
+        <div class="book-details">
+            <img src="img/lololo.png" alt="Historia mínima de Estados Unidos de América">
+            <div class="book-title">Historia mínima de Estados Unidos de América</div>
+            <div class="book-author">Erika Pani</div>
+            <div class="ISBN">ISBN: 9786074628777</div>
+            <div class="book-price">$270.00</div>
+            <div class="book-description">
+                <p>"Estados Unidos ha sido descrito como la "mejor esperanza del mundo" y el "Gran Satán" Se ha erigido en ejemplo del más craso materialismo y en modelo de alucinante progreso; en encarnación del imperialismo y en modelo de alucinante progreso; en encarnación del imperialismo explotador y en la tierra prometida..."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+
+        <!-- Libro 3 -->
+        <div class="book-details">
+            <img src="img/asdasd.png" alt="Integración latinoamericana y caribeña: política y economía">
+            <div class="book-title">Integración latinoamericana y caribeña: política y economía</div>
+            <div class="book-author">osé Briceño Ruiz, Andrés Rivarola Puntigliano y Ángel M. Casas Gragea</div>
+            <div class="ISBN">ISBN: 9788437506586</div>
+            <div class="book-price">$230.00</div>
+            <div class="book-description">
+                <p>"Se parte de la premisa de que existe un acervo propio, en términos teóricos y prácticos, que merece ser estudiado a fondo a modo de lograr una mayor comprensión del fenómeno regionalista en América Latina. Por ello, los estudios contenidos en esta obra proporcionan una valiosa visión de la historia de la integración latinoamericana, las complejidades del proceso, la inserción de estos países en el orden mundial y las importantes contribuciones del pensamiento latinoamericano a la formación de una visión crítica arraigada en sus realidades y los desafíos de si desarrollo e integración..."</p>
+            </div>
+            <div class="action-buttons">
+                <button class="action-button">Agregar a Favoritos</button>
+                <button class="action-button">Comprar</button>
+            </div>
+        </div>
+</body>
+</html>

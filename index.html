@@ -1,0 +1,221 @@
+    <!DOCTYPE html>
+    <html lang="es">
+        
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="buscador.js" defer></script>
+        <title>B I B L I O T E C</title>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+        <link rel="stylesheet" href="styles/indexstyles.css">
+    <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                padding: 0;
+                background-color: white;
+            }
+
+            header {
+                background: linear-gradient(150deg, #6C3483, #9C1D8E);
+                color: #fff;
+                text-align: center;
+                padding: 1em;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .search-bar {
+                background: linear-gradient(150deg, #6C3483, #9C1D8E);
+                padding: 10px;
+                border-radius: 5px;
+                display: flex;
+                align-items: center;
+                flex: 1;
+                margin-left: 20px;
+            }
+
+            .search-bar input {
+                width: 70%;
+                padding: 10px;
+                box-sizing: border-box;
+                border: none;
+                border-radius: 5px 0 0 5px;
+            }
+
+            .search-bar button {
+                padding: 10px;
+                cursor: pointer;
+                border: none;
+                border-radius: 0 5px 5px 0;
+                background-color: #fff;
+            }
+
+            nav {
+                background-color: white;
+                overflow: hidden;
+                text-align: center;
+                padding: 10px;
+            }
+
+            nav a {
+                display: inline-block;
+                color: black;
+                text-align: center;
+                padding: 14px 16px;
+                text-decoration: none;
+                margin: 0 80px; 
+            }
+
+            .dropdown {
+                display: inline-block;
+            }
+
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background-color: rgba(0, 0, 0, 0.74);
+                box-shadow: 0 8px 16px rgba(0, 0, 0, 0.205);
+                z-index: 1;
+                list-style: none;
+                margin: 0;
+                padding: 0;
+            }
+
+            .dropdown-content a {
+                display: block;
+                color: white;
+                padding: 10px;
+                text-decoration: none;
+            }
+
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+
+            #slider {
+            max-width: 800px;
+            margin: auto;
+            }
+
+            #slider img {
+            width: 100%;
+            height: auto;
+            }
+
+            .carrito-container {
+            position: relative;
+            }
+
+            #carrito-icon {
+                width: 50px;
+                height: auto;
+                margin-right: 5px;
+                cursor: pointer;
+            }
+
+            .logo-link {
+                text-decoration: none;
+                color: #fff;
+            }
+    
+            .logo-link:hover {
+                text-decoration: none;
+                color: #ccc; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <header>
+            <div class="name-logo">
+                <a href="index.html" class="logo-link">
+                    <h1>B I B L I O T E C</h1>
+                </a>
+            </div>
+        <div class="search-bar">
+            <input type="text" placeholder="Buscar por nombre, autor o ISBN" id="titulo" required>
+            <!-- Llama la función de JS -->
+            <button id="search-button">Buscar</button>
+        </div>
+        <div class="carrito-container">
+            <a href="carrito.html">
+                <img src="img/carrito-de-compras.png" alt="Carrito de compras" id="carrito-icon">
+            </a>
+        </div>
+        </header>
+
+        <nav>
+            <div class="dropdown">
+                <a href="#">MI CUENTA</a>
+                <ul class="dropdown-content">
+                    <a href="pedidos.html">Pedidos</a>
+                    <a href="lista_favoritos.html">Lista de Favoritos</a>
+                    <a href="inicio_sesion.html">Cerrar Sesion</a>
+                </ul>
+            </div>
+            <div class="dropdown">
+                <a href="#">CATEGORÍAS</a>
+                <ul class="dropdown-content">
+                    <li><a href="administracion.html">Administración</a></li>
+                    <li><a href="desarrollo_humano.html">Desarrollo Humano</a></li>
+                    <li><a href="ciencias_basicas.html">Ciencias Basicas</a></li>
+                    <li><a href="comercio_negocios.html">Comercio y Negocios Internacionales</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <section id="slider">
+            <div>
+                <img src="img/B I B L I O T E C 3.png" alt="Slide 1">
+            </div>
+            <div>
+                <img src="img/B I B L I O T E C.png" alt="Slide 2">
+            </div>
+        </section>  
+
+        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+        <script src="script.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('#slider').slick({
+                    dots: true,
+                    autoplay: true,
+                    autoplaySpeed: 2000
+                });
+            });
+        </script>
+
+        <div class="category-double-banner snipcss-pR9pP style-F797L" data-content-type="html" data-appearance="default" data-element="main" data-decoded="true" id="style-F797L">
+            <div class="double-banner libro-del-mes">
+            <div class="dbanner-item">
+                <img src="img/ad.jpg">
+                </a>
+            </div>
+            <div class="dbanner-item texto">
+                <h2>
+                Libro del mes
+                </h2>
+                <h3>
+                    The Art of Game Design: A Book of Lenses
+                </h3>
+                <p>
+                    Jesse Schell brinda una guía integral que ofrece perspectivas prácticas, llamadas "lentes", para ayudar a los diseñadores de juegos a crear experiencias envolventes y significativas.
+                </p>
+                <a href="https://www.academia.edu/37000309/The_art_of_game_design_pdf">
+                Descúbrelo aquí
+                </a>
+            </div>
+            </div>
+        </div>
+
+
+        <footer>
+            <p>&copy; 2023 BIBLIOTEC</p>
+        </footer>
+    </body>
+    </html>

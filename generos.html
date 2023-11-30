@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Géneros Literarios</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em;
+        }
+
+        nav {
+            background-color: #555;
+            overflow: hidden;
+        }
+
+        nav a {
+            float: left;
+            display: block;
+            color: #fff;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        section {
+            max-width: 800px;
+            margin: 2em auto;
+            padding: 1em;
+            background-color: #fff;
+        }
+
+        .genre-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .genre-button {
+            flex: 0 0 calc(50% - 20px);
+            background-color: #D2E59E;
+            color: #fff;
+            padding: 50px;
+            margin: 10px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            box-sizing: border-box;
+            font-size: 24px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+        .genre-button:nth-child(even) {
+            margin-right: 0; /* Quitamos el margen derecho a los botones pares */
+        }
+
+        .genre-button:hover {
+            background-color: #CBD081;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Géneros Literarios</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">Volver</a>
+    </nav>
+
+    <section>
+        <div class="genre-buttons">
+            <button class="genre-button">Novela</button>
+            <button class="genre-button">Poesía</button>
+            <button class="genre-button">Drama</button>
+            <button class="genre-button">Ensayo</button>
+            <button class="genre-button">Cuento</button>
+            <button class="genre-button">Ciencia ficción</button>
+            <button class="genre-button">Fantasía</button>
+            <button class="genre-button">Misterio</button>
+            <button class="genre-button">Historia</button>
+            <button class="genre-button">Biografía</button>
+            <button class="genre-button">Autobiografía</button>
+            <button class="genre-button">Romance</button>
+            <button class="genre-button">Aventura</button>
+            <button class="genre-button">Terror</button>
+            <button class="genre-button">Humor</button>
+            <button class="genre-button">Realismo mágico</button>
+            <button class="genre-button">Satírico</button>
+            <button class="genre-button">Epistolar</button>
+            <button class="genre-button">Distopía</button>
+            <button class="genre-button">Fábula</button>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Tienda pro</p>
+    </footer>
+</body>
+</html>
